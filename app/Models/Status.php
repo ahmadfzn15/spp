@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Status extends Model
+{
+    use HasFactory;
+
+    protected $table = 'status';
+    protected $guarded = ['id'];
+
+    public function spp()
+    {
+        return $this->hasMany(Spp::class);
+    }
+
+    public function pembayaran()
+    {
+        return $this->hasMany(Pembayaran::class);
+    }
+}
